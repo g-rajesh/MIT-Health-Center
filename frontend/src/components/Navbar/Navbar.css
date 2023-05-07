@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+header.navbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 5rem;
+}
+
+.toggler, .toggler-reverse {
+    display: none;
+    cursor: pointer;
+}
+
+.toggler {
+    font-size: 1.7rem;
+}
+
+.toggler-reverse {
+    font-size: 1.4rem;
+}
+
+header.navbar  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+header.navbar .logo h2 {
+    margin-right: 0.45rem;
+    font-size: 2.15rem;
+    color: #007aff;
+}
+
+header.navbar  .logo  span {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+header.navbar > nav > ul {
+    display: flex;
+}
+
+header.navbar ul > li {
+    margin: 0 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 0.975rem;
+    text-transform: uppercase;
+}
+
+header.navbar ul > li.active,
+header.navbar ul > li:hover {
+    color: #007aff;
+}
+
+@media screen and (max-width: 768px) {
+    .toggler {
+        display: block;
+    }
+
+    header.navbar {
+        padding: 0 2rem;
+    }
+
+    header.navbar > nav {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fff;
+        z-index: 2;
+        transition: all 0.3s;
+    }
+
+    header.navbar > nav.active {
+        right: 0;
+    }
+
+    header.navbar > nav.active > .toggler-reverse {
+        display: block;
+    }
+
+    header.navbar > nav > ul {
+        /* padding: 5rem; */
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    header.navbar > nav > ul > li {
+        /* margin: 2rem 0; */
+        margin: 0;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #ccc;
+        padding: 2rem;
+    }
+
+    header.navbar > nav > .toggler-reverse {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+}

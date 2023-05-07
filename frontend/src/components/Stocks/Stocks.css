@@ -1,0 +1,151 @@
+.stocks-container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: #fff;
+}
+
+.stocks-container .content {
+    padding: 3rem 5rem;
+}
+
+.stocks-container .content > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stocks-container .content > header .right,
+.stocks-container .content > header .right .filter,
+.stocks-container .content > header .right .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stocks-container .content > header  h2 {
+    letter-spacing: 2px;
+}
+
+.stocks-container .content > header .right .filter {
+    border-right: 2px solid #ccc;
+}
+
+.stocks-container .content > header .right .filter,
+.stocks-container .content > header .right .pagination {
+    padding: 0 2rem;
+}
+
+.stocks-container .content > header .right .filter {
+    padding-left: 0;
+}
+
+.stocks-container .content > header .right .pagination {
+    padding-right: 0;
+}
+
+.stocks-container .content > header .right .filter .filter-icon {
+    margin-right: 1rem;
+    font-size: 1.4rem;
+}
+
+.stocks-container .content > header .right .filter select {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.4rem;
+    outline: none;
+}
+
+.stocks-container .content > header .right .pagination span {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+.stocks-container .content > header .right .pagination .l-icon {
+    font-size: 0.985rem;
+    cursor: pointer;
+}
+
+.stocks-container .content > header .right .pagination .l-icon.disable {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.stocks-container .content .table {
+    margin: 2rem 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.stocks-container .content .table .search  {
+    width: 100%;
+    position: relative;
+}
+
+.stocks-container .content .table .search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.7rem 1rem;
+    padding-left: 3rem;
+    font-size: 0.985rem;
+}
+
+.stocks-container .content .table .search .s-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+table {
+    overflow: auto;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td , th{
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th{
+    background-color: #fff;
+    color: #000;
+    font-family: 'Open Sans',Sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr{
+    width: 100%;
+    background-color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    border-top: 1px solid #ccc;
+}
+
+tr:nth-child(even){
+    background-color: #eeeeee;
+}
+
+@media screen and (max-width: 768px) {
+    .stocks-container .content {
+        padding: 3rem 2rem;
+    }
+
+    .stocks-container .content > header {
+        display: block;
+    }
+
+    .stocks-container .content > header h2 {
+        margin-bottom: 1rem;
+    }
+
+    .stocks-container .content > header .right {
+        align-items: space-between;
+    }
+
+    .stocks-container .content > header .right .filter {
+        border: 0;
+    }
+}
