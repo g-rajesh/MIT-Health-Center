@@ -74,6 +74,7 @@
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    overflow-x: auto;
 }
 
 .stocks-container .content .table .search  {
@@ -104,9 +105,34 @@ table {
     border-spacing: 0;
 }
 
-td , th{
+td , th {
     padding: 15px 20px;
     text-align: center;
+}
+
+.not-found {
+    border-top: 1px solid #ccc;
+    height: 20vh;
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.not-found p > .sad-icon {
+    margin-right: 1rem;
+    font-size: 1.45rem;
+}
+
+.not-found p {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 400;
 }
 
 th{
@@ -147,5 +173,12 @@ tr:nth-child(even){
 
     .stocks-container .content > header .right .filter {
         border: 0;
+    }
+
+    .stocks-container .content > header .right .filter {
+        padding: 0;
+    }
+    .stocks-container .content > header .right .pagination {
+        padding: 0;
     }
 }

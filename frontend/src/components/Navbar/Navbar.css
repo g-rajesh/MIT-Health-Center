@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 header.navbar {
@@ -79,7 +78,7 @@ header.navbar ul > li:hover {
     header.navbar > nav {
         position: absolute;
         top: 0;
-        right: -100%;
+        left: -100%;
         width: 100%;
         min-height: 100vh;
         background-color: #fff;
@@ -88,7 +87,7 @@ header.navbar ul > li:hover {
     }
 
     header.navbar > nav.active {
-        right: 0;
+        left: 0;
     }
 
     header.navbar > nav.active > .toggler-reverse {

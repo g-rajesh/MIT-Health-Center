@@ -7,6 +7,7 @@ import './Navbar.css'
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     return (
+        
         <header className='navbar'>
             <div className="logo">
                 <h2>MIT</h2>
