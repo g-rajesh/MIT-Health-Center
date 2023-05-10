@@ -52,7 +52,7 @@ header.navbar > nav > ul {
     display: flex;
 }
 
-header.navbar ul > li {
+header.navbar ul > li a{
     margin: 0 1rem;
     cursor: pointer;
     font-weight: 600;
@@ -61,8 +61,8 @@ header.navbar ul > li {
     text-transform: uppercase;
 }
 
-header.navbar ul > li.active,
-header.navbar ul > li:hover {
+header.navbar ul > li a.active,
+header.navbar ul > li a:hover {
     color: #007aff;
 }
 
@@ -100,7 +100,7 @@ header.navbar ul > li:hover {
         /* align-items: center; */
     }
 
-    header.navbar > nav > ul > li {
+    header.navbar > nav > ul > li a{
         /* margin: 2rem 0; */
         margin: 0;
         letter-spacing: 2px;

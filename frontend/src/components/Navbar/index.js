@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { NavLink } from "react-router-dom";
 
 import {FiMenu} from 'react-icons/fi';
 import {FaTimes} from 'react-icons/fa';
@@ -35,11 +36,21 @@ const Navbar = () => {
                 </div>
 
                 <ul>
-                    <li>Home</li>
-                    <li>Infrastructure</li>
-                    <li>Staffs</li>
-                    <li className='active'>Stocks</li>
-                    <li>Contact</li>
+                    <li>
+                        <NavLink to="/" activeclassname="active">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/staffs">Staffs</NavLink>
+                    </li>
+                    <li className='active'>
+                        <NavLink to="/stocks">Stocks</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/login">Login</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact">Contact</NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>
