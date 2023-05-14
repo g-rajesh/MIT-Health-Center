@@ -127,6 +127,11 @@ header.navbar ul > li button:hover {
         padding: 2rem;
     }
 
+    header.navbar > nav > ul > li button {
+        width: 100%;
+        text-align: left;
+    }
+
     header.navbar > nav > .toggler-reverse {
         position: absolute;
         top: 1rem;
