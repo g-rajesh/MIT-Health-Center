@@ -7,7 +7,7 @@ const stockController = require("../controller/stocks");
 
 router.post("/login", userController.login);
 
-router.get("/getStock", auth, stockController.getStock);
+router.get("/getStock", stockController.getStock);
 
 router.post("/addStock", auth, stockController.addStock);
 

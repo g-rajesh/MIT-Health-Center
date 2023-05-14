@@ -1,21 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import {useSnackbar} from 'notistack';
+
 import {TfiMenuAlt} from 'react-icons/tfi';
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 import {BsSearch} from 'react-icons/bs';
 import {HiOutlineEmojiSad} from "react-icons/hi";
 
 import './Stocks.css';
-import { data } from '../../utils/data';
 import Table from './Table';
+import { fetchStocks } from '../../utils/fetch';
 
 
-const Stocks = () => {
+const Stocks = ({data, setData}) => {
     const [page, setPage] = useState(1);
-    const [stocks, setStocks] = useState(data);
+    // const [data, setData] = useState([]);
+    const [stocks, setStocks] = useState([]);
 
     const maxPages = Math.ceil(stocks.length / 5);
 
-
+    const { enqueueSnackbar } = useSnackbar();
 
     const changeHandler = (e) => {
         const value = e.target.value;
@@ -24,7 +27,7 @@ const Stocks = () => {
             return ;
         }
 
-        const filteredStocks = stocks.filter(stock => {
+        const filteredStocks = data.filter(stock => {
 
             let stockName = stock.name.toLowerCase();
             let val = value.toLowerCase();
@@ -38,8 +41,23 @@ const Stocks = () => {
 
     const sortHandler = (e) => {
         const column = e.target.value;
+        if(column === "id") {
+            setStocks(data);
+            setPage(1);
+
+            return ;
+        }
 
         let sortedArr = [...stocks];
+
+        if(column === "price") {
+            sortedArr.sort((a,b) => a[column]["$numberDecimal"] - b[column]["$numberDecimal"]);
+            setStocks(sortedArr);
+            setPage(1);
+            
+            return ;
+        }
+
         if(column === "name") {
             sortedArr.sort((a,b) => {
                 if(a.name < b.name) return -1;
@@ -47,7 +65,7 @@ const Stocks = () => {
                 return 0;
             });
             // setStocks(sortedArr);
-        } else if(["qty", "price", "id"].includes(column)) {
+        } else if(["qty"].includes(column)) {
             sortedArr.sort((a,b) => a[column] - b[column]);
         } else {
             sortedArr.sort((a,b) => new Date(a[column]) - new Date(b[column]));
@@ -56,6 +74,26 @@ const Stocks = () => {
         setPage(1);
     }
 
+    useEffect(() => {
+
+        async function fetchData() {
+            try {
+                const data = await fetchStocks();
+
+                setData(data.data.data);
+                setStocks(data.data.data);
+
+            } catch (err) {
+                if(err?.response?.status >= 400 && err?.response?.status < 500) {
+                    enqueueSnackbar(err.response.data.message, {variant: "warning"})
+                } else {
+                    enqueueSnackbar(err.message, {variant: "error"});
+                }
+            }
+        }
+
+        fetchData();
+    }, []);
 
     return (
         <div className="stocks-container">

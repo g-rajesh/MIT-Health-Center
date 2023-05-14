@@ -20,7 +20,7 @@ exports.addStock = async (req, res, next) => {
 
     try {
         if(req.username === "pharmacist") {
-            const noAccessError = new Error("Username doesn't exist");
+            const noAccessError = new Error("You don't have access to perform this action!");
             noAccessError.data =  { message: "You don't have access to perform this action!" };
             noAccessError.status = 500;
             throw noAccessError;
@@ -45,13 +45,18 @@ exports.addStock = async (req, res, next) => {
 exports.updateStock = async (req, res, next) => {
 
     const { _id, qty } = req.body;
+
+    console.log({ _id, qty });
     try {
         if(req.username === "admin") {
-            const noAccessError = new Error("Username doesn't exist");
+            const noAccessError = new Error("You don't have access to perform this action!");
             noAccessError.data =  { message: "You don't have access to perform this action!" };
             noAccessError.status = 500;
             throw noAccessError;
         }
+
+        const s = await Stocks.findById(_id);
+        console.log(s);
 
         if(qty !== 0) {
             await Stocks.updateOne({ _id }, { qty });
@@ -60,6 +65,7 @@ exports.updateStock = async (req, res, next) => {
         }
 
         const stocks = await Stocks.find();
+        console.log(stocks.length);
         return res.status(200).json({
             message: "Updated successfully...",
             data: stocks

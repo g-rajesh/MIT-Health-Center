@@ -56,7 +56,7 @@
 
 .stocks-container .content > header .right .pagination span {
     font-size: 1.1rem;
-    padding: 0 1rem;
+    padding: 0 0.1rem;
 }
 
 .stocks-container .content > header .right .pagination .l-icon {

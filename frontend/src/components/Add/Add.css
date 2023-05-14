@@ -1,0 +1,78 @@
+.add-container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.add-container .content {
+    margin-top: 3rem;
+    width: 500px;
+    min-height: 100px;
+}
+
+.add-container .content  > h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.add-container .content .input-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.add-container .content .input-group label {
+    width: 100%;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.add-container .content .input-group input {
+    width: 100%;
+    outline: 0;
+    font-size: 0.975rem;
+    padding: 0.45rem 0.8rem;
+}
+
+.add-container .content .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.add-container .content .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;   
+}
+
+.add-container .content form button {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #007aff;
+    color: #fff;
+    padding: 0.45rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 500px) {
+    .add-container .content {
+        padding: 3rem 2rem;
+        width: 100%;
+    }   
+    .add-container .content .grid-2,
+    .add-container .content .grid-3 {
+        display: block;
+    }
+}

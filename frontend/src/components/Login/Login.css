@@ -1,0 +1,60 @@
+.login-container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login-container .content {
+    margin-top: 3rem;
+    width: 300px;
+    min-height: 100px;
+}
+
+.login-container .content  > h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.login-container .content .input-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.login-container .content .input-group label {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-container .content .input-group input {
+    width: 100%;
+    outline: 0;
+    border: 1px solid #333;
+    font-size: 0.975rem;
+    padding: 0.5rem 1rem;
+}
+
+.login-container .content  button {
+    width: 100%;
+    display: block;
+    background-color: #007aff;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-size: 0.975rem;
+    transition: all 0.2s;
+}
+
+.login-container .content  button:hover {
+    background-color: #0662c6;
+}

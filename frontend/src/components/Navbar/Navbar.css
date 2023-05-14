@@ -52,17 +52,35 @@ header.navbar > nav > ul {
     display: flex;
 }
 
-header.navbar ul > li a{
+header.navbar ul > li a,
+header.navbar ul > li button{
     margin: 0 1rem;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s;
     font-size: 0.975rem;
     text-transform: uppercase;
+    color: #000;
+}
+
+header.navbar ul > li:first-child > a {
+    margin-left: 0;
+}
+
+header.navbar ul > li:last-child > a {
+    margin-right: 0;
+}
+
+header.navbar ul > li button {
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    font-weight: 600;
 }
 
 header.navbar ul > li a.active,
-header.navbar ul > li a:hover {
+header.navbar ul > li a:hover,
+header.navbar ul > li button:hover {
     color: #007aff;
 }
 
@@ -100,8 +118,9 @@ header.navbar ul > li a:hover {
         /* align-items: center; */
     }
 
-    header.navbar > nav > ul > li a{
-        /* margin: 2rem 0; */
+    header.navbar > nav > ul > li a,
+    header.navbar > nav > ul > li button{
+        display: block;
         margin: 0;
         letter-spacing: 2px;
         border-bottom: 1px solid #ccc;
